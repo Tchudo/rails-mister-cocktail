@@ -1,0 +1,10 @@
+<div class="container">
+<h2>Add a new ingredient:</h2>
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :ingredient_id, as: :select, collection: @ingredients, prompt: 'Select ingredient', label: false %>
+  <%= f.input :description %>
+  <%= f.submit "add this new dose", class: "btn btn-primary" %>
+<%= link_to "Cancel", cocktail_path(@cocktail), class: "btn btn-danger" %>
+
+<% end %>
+</div>

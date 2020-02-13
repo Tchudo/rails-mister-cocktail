@@ -1,4 +1,4 @@
-class CocktailsController < ActionController::Base
+class CocktailsController < ApplicationController
 
   def index
     @cocktails = Cocktail.all
@@ -6,6 +6,8 @@ class CocktailsController < ActionController::Base
 
   def show
     @cocktail = Cocktail.find(params[:id])
+    @doses = @cocktail.doses
+
   end
 
   def new
